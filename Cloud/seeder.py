@@ -9,10 +9,10 @@ if __name__ == '__main__':
     """
 
     # read template
-    with open(r"C:\Users\TOSHIBA\PycharmProjects\resource_allocation_using_machine_learning\Cloud\storage\data\seeder_data_template.csv", "r") as file_object:
+    with open(r"C:\Users\TOSHIBA\PycharmProjects\test\ML\Cloud\storage\data\seeder_data_template.csv", "r") as file_object:
         seeder = file_object.read().split('\n')
 
-    with open(r"C:\Users\TOSHIBA\PycharmProjects\resource_allocation_using_machine_learning\Cloud\storage\data\data.csv", "a") as file_object:
+    with open(r"C:\Users\TOSHIBA\PycharmProjects\test\ML\Cloud\storage\data\data.csv", "a") as file_object:
         # for each row in template, create data in random numbers
         # and write the row in a file
         for i in seeder:
@@ -38,7 +38,7 @@ if __name__ == '__main__':
                 file_object.write('\n')
 
     # read the whole data to manipulate
-    with open(r"C:\Users\TOSHIBA\PycharmProjects\resource_allocation_using_machine_learning\Cloud\storage\data\data.csv", "r") as file_object:
+    with open(r"C:\Users\TOSHIBA\PycharmProjects\test\ML\Cloud\storage\data\data.csv", "r") as file_object:
         array = file_object.read().split('\n')
 
     random.shuffle(array)
@@ -48,5 +48,5 @@ if __name__ == '__main__':
         array2 += i
         array2 += '\n'
 
-    with open(r"C:\Users\TOSHIBA\PycharmProjects\resource_allocation_using_machine_learning\Cloud\storage\data\data.csv", "w") as file_object:
+    with open(r"C:\Users\TOSHIBA\PycharmProjects\test\ML\Cloud\storage\data\data.csv", "w") as file_object:
         array = file_object.write(array2)

@@ -4,6 +4,10 @@ from Edges.workers import Worker1
 from Edges.workers import Worker2
 from Edges.workers import Worker3
 import numpy as np
+# import warnings filter
+from warnings import simplefilter
+# ignore all future warnings
+simplefilter(action='ignore', category=FutureWarning)
 
 class Master():
     def __init__(self):
@@ -25,11 +29,11 @@ class Master():
         """ finds the best worker for each cloudlet using trained model
         """
 
-        # load model
-        model = load(r'C:\Users\TOSHIBA\PycharmProjects\resource_allocation_using_machine_learning\Cloud\storage\model.joblib')
+        # load best_model
+        best_model = load(r'C:\Users\TOSHIBA\PycharmProjects\test\ML\Cloud\storage\best_model.joblib')
 
         for i in range(self.numberOfCloudlets):
-            classLabel = model.predict([self.cloudlets[i].getCategorizedAsList()])
+            classLabel = best_model.predict([self.cloudlets[i].getCategorizedAsList()])
             self.cloudlets[i].classLabel = classLabel
 
     def allocateCloudletsToWorkers(self):
@@ -58,7 +62,7 @@ class Master():
         worker3.run()
 
         # print logs
-        print('****************************Machine_Learning******************************')
+        print('****************************ML******************************')
         print('************************************************************')
         worker1.log()
         worker2.log()
@@ -108,6 +112,7 @@ class Master():
         worker2.log()
         worker3.log()
 
+
 if __name__ == '__main__':
     """ start point of the Master Node
     """
@@ -122,3 +127,5 @@ if __name__ == '__main__':
 
     # allocate resources using Greedy algorithm
     master.allocateCloudletsToWorkersGreedely()
+
+

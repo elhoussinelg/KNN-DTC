@@ -195,3 +195,4 @@ Utilisation Greedy Algorithm
 </ul>
 
 Ce qui montre que le modèle ML fait un meilleur travail en répartissant les tâches sur les travailleurs et en réduisant l'envergure globale. Comme vous pouvez le voir, l'algorithme Greedy envoie la plupart des tâches au travailleur 3. mais ML équilibre les charges comme nous le voulions. bien que les données aient été générées mais un être humain, le résultat doit être ce que nous. Dans l'application du monde réel, le processus de formation du mode n'est pas unique et peut même être effectué à intervalles afin qu'il puisse trouver la meilleure façon d'allouer les ressources.
+# KNN-DTC
